@@ -1,0 +1,87 @@
+
+/* Overall webpage layout using CSS Grid */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #222;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "info"
+        "puzzle"
+        "date";
+    gap: 20px;
+}
+
+/* Section 1: Your information */
+.info {
+    grid-area: info;
+    background-color: #dceafa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Section 2: Puzzle */
+.puzzle-section {
+    grid-area: puzzle;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.puzzle {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.column img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Hide the extra puzzle piece */
+.imposter {
+    display: none;
+}
+
+/* Section 3: Assignment date */
+.date {
+    grid-area: date;
+    background-color: #dff2e1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Make the page work on smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .puzzle-section {
+        padding: 8px;
+    }
+
+    .puzzle {
+        width: 100%;
+    }
+}
